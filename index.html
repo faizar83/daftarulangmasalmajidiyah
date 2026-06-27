@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - MAS. AL-MAJIDIYAH NWDI MAJIDI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -22,6 +16,11 @@
             #printDoubleContainer { display: block !important; width: 100%; }
         }
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body class="bg-slate-100 antialiased text-slate-800 flex h-screen overflow-hidden">
 
@@ -29,7 +28,7 @@
         <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full text-center border border-emerald-600">
             <img src="https://uploads.onecompiler.io/44rv6xs4x/44rxebzu8/logo%20ma.jpg" alt="Logo" class="h-24 mx-auto mb-4 object-contain">
             <h3 class="text-lg font-bold text-slate-900 leading-tight">MAS. AL-MAJIDIYAH NWDI MAJIDI</h3>
-            <p class="text-xs text-slate-500 mb-6">Sistem Informasi Pendaftaran Terkunci</p>
+            <p class="text-xs text-slate-500 mb-6">Sistem Informasi Pendaftaran Terkunci Login Dulu Ya!!!</p>
             <form onsubmit="checkPassword(event)" class="space-y-4">
                 <input type="password" id="gatePassword" required placeholder="••••••••" class="w-full text-center rounded-xl border border-slate-300 px-4 py-2.5 focus:border-emerald-500 focus:outline-none tracking-widest font-mono text-sm">
                 <p id="passwordError" class="text-xs text-rose-600 font-semibold hidden">Password admin salah!</p>
@@ -109,7 +108,7 @@
                     </div>
                     <div class="flex items-center space-x-2 border-l pl-4 border-slate-200">
                         <div class="text-right">
-                            <p class="text-xs font-bold text-slate-800">Abdushomad Jaelani</p>
+                            <p class="text-xs font-bold text-slate-800">Muhamad Faizar, S.Pd.</p>
                             <p class="text-[10px] text-emerald-600 font-medium">Super Admin</p>
                         </div>
                         <div class="w-8 h-8 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold border border-emerald-500">
@@ -266,7 +265,7 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Kelas *</label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Kelas </label>
                                     <select id="studentClass" required onchange="handleClassChange()" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-800 focus:border-emerald-500 focus:outline-none">
                                         <option value="">-- Pilih Kelas --</option>
                                         <option value="X">Kelas X</option>
@@ -275,13 +274,13 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Jurusan / Peminatan *</label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Jurusan </label>
                                     <select id="studentMajor" required class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-800 focus:border-emerald-500 focus:outline-none">
                                         <option value="">-- Pilih Jurusan --</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Sistem Domisili Santri *</label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Sistem Domisili *</label>
                                     <select id="dormitoryStatus" required class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-800 focus:border-emerald-500 focus:outline-none">
                                         <option value="">-- Pilih Domisili --</option>
                                         <option value="Asrama">Asrama (Mukim di Pondok)</option>
@@ -367,6 +366,9 @@
                                 <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="SKL" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">SKL</span></label>
                                 <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Pas Photo" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Pas Photo</span></label>
                                 <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Kartu Keluarga</span></label>
+                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">KTP Bapak dan Ibu</span></label>
+                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Akte Kelahiran</span></label>
+                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Kartu Bantuan Sosial (KIP, KKS dan PKH)</span></label>
                             </div>
                         </div>
 
@@ -495,8 +497,8 @@
 
                     <div class="flex justify-between items-end mt-4 text-[10px]">
                         <p class="text-slate-400 text-[8px]">* Validasi komputerisasi lokal</p>
-                        <div class="text-center w-48">
-                            <p>Pancor, <span id="kwTtdTgl">--</span></p>
+                        <div class="text-center w-60">
+                            <p>Majidi, <span id="kwTtdTgl">--</span></p>
                             <p class="text-slate-500 mb-8">Bendahara Penerima</p>
                             <p class="font-bold border-b uppercase">Abdusshomad Jaelani Syarif, S.Pd.</p>
                         </div>
@@ -574,7 +576,7 @@
         }
 
         function hitungTerbilang(nilai) {
-            if (nilai === 0) return "Nol";
+            if (nilai === 0) return "";
             const kata = ["", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas"];
             if (nilai < 12) return " " + kata[nilai];
             if (nilai < 20) return hitungTerbilang(nilai - 10) + " Belas";
@@ -686,7 +688,8 @@
                 kelas: document.getElementById('studentClass').value, jurusan: document.getElementById('studentMajor').value, 
                 domisili: document.getElementById('dormitoryStatus').value, wali: document.getElementById('waliName').value, 
                 ukuranBaju: document.querySelector('input[name="shirt_size"]:checked').value,
-                totalBaku, totalBayar, totalSisa: totalBaku - totalBayar, tanggalInput: new Date().toLocaleDateString('id-ID', {day:'numeric', month:'short', year:'numeric'})
+                totalBaku, totalBayar, totalSisa: totalBaku - totalBayar, tanggalInput: new Date().toLocaleDateString('id-ID', {day:'numeric', month:'short', year:'numeric'}),
+                itemPayments: itemPayments
             };
 
             db.push(payload);
@@ -712,6 +715,47 @@
             document.getElementById('rcTotalBayar').innerText = formatRupiah(totalBayar);
             document.getElementById('rcTotalSisa').innerText = formatRupiah(totalBaku - totalBayar);
             document.getElementById('kwTerbilang').innerText = hitungTerbilang(totalBayar) + " Rupiah";
+
+            document.getElementById('receiptModal').classList.remove('hidden');
+        }
+
+        function reprintReceipt(regNo) {
+            const db = JSON.parse(localStorage.getItem("database_santri")) || [];
+            const student = db.find(s => s.nomorRegistrasi === regNo);
+            
+            if (!student) {
+                alert("Data tidak ditemukan.");
+                return;
+            }
+
+            currentStudentCleanName = student.nama.trim().replace(/\s+/g, '_');
+
+            document.getElementById('resName').innerText = `: ${student.nama}`;
+            document.getElementById('resNisn').innerText = `: ${student.nisn}`;
+            document.getElementById('resDorm').innerText = `: ${student.domisili}`;
+            document.getElementById('resClassMajor').innerText = `: Kelas ${student.kelas} - ${student.jurusan}`;
+            document.getElementById('kwTanggal').innerText = `Tanggal: ${student.tanggalInput}`;
+            document.getElementById('kwTtdTgl').innerText = student.tanggalInput;
+            
+            const listTbody = document.getElementById('receiptListItems');
+            listTbody.innerHTML = '';
+            
+            if(student.itemPayments && student.itemPayments.length > 0) {
+                student.itemPayments.forEach((p, index) => {
+                    if(p.bayar > 0) {
+                        const row = `<tr><td class="border text-center">${index+1}</td><td class="border">${p.item}</td><td class="border text-right">${formatRupiah(p.baku)}</td><td class="border text-right font-bold">${formatRupiah(p.bayar)}</td><td class="border text-right text-rose-600">${formatRupiah(p.sisa)}</td></tr>`;
+                        listTbody.innerHTML += row;
+                    }
+                });
+            } else {
+                const row = `<tr><td class="border text-center">1</td><td class="border">Pembayaran Global (Log Lama)</td><td class="border text-right">${formatRupiah(student.totalBaku)}</td><td class="border text-right font-bold">${formatRupiah(student.totalBayar)}</td><td class="border text-right text-rose-600">${formatRupiah(student.totalSisa)}</td></tr>`;
+                listTbody.innerHTML += row;
+            }
+
+            document.getElementById('rcTotalBaku').innerText = formatRupiah(student.totalBaku);
+            document.getElementById('rcTotalBayar').innerText = formatRupiah(student.totalBayar);
+            document.getElementById('rcTotalSisa').innerText = formatRupiah(student.totalSisa);
+            document.getElementById('kwTerbilang').innerText = hitungTerbilang(student.totalBayar) + " Rupiah";
 
             document.getElementById('receiptModal').classList.remove('hidden');
         }
@@ -747,7 +791,7 @@
             if(db.length > 0) {
                 payTbody.innerHTML = ''; stuTbody.innerHTML = '';
                 db.slice(-5).reverse().forEach(s => {
-                    payTbody.innerHTML += `<tr><td class="p-2 font-mono text-emerald-700">${s.nomorKwitansi || 'KW-01'}</td><td class="p-2 uppercase font-semibold">${s.nama}</td><td class="p-2 font-mono text-slate-700">${formatRupiah(s.totalBayar)}</td><td class="p-2 text-center"><i class="fas fa-eye text-emerald-600"></i></td></tr>`;
+                    payTbody.innerHTML += `<tr><td class="p-2 font-mono text-emerald-700">${s.nomorKwitansi || 'KW-01'}</td><td class="p-2 uppercase font-semibold">${s.nama}</td><td class="p-2 font-mono text-slate-700">${formatRupiah(s.totalBayar)}</td><td class="p-2 text-center"><button onclick="reprintReceipt('${s.nomorRegistrasi}')" class="text-emerald-600 hover:text-emerald-800"><i class="fas fa-print"></i></button></td></tr>`;
                     stuTbody.innerHTML += `<tr><td class="p-2 font-mono">${s.nomorRegistrasi}</td><td class="p-2 uppercase">${s.nama}</td><td class="p-2">${s.domisili}</td><td class="p-2 text-center"><span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">Aktif</span></td></tr>`;
                 });
             }
@@ -815,7 +859,8 @@
                         <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${s.domisili === 'Asrama' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-700'}">${s.domisili}</span></td>
                         <td class="p-3 text-right font-mono font-medium">${formatRupiah(s.totalBayar)}</td>
                         <td class="p-3 text-right font-mono ${s.totalSisa > 0 ? 'text-rose-600 font-bold' : 'text-emerald-600'}">${formatRupiah(s.totalSisa)}</td>
-                        <td class="p-3 text-center">
+                        <td class="p-3 text-center space-x-1 flex items-center justify-center">
+                            <button onclick="reprintReceipt('${s.nomorRegistrasi}')" class="text-emerald-700 hover:text-white hover:bg-emerald-700 px-2 py-0.5 rounded border border-emerald-200 text-[11px] transition flex items-center gap-1"><i class="fas fa-print"></i> Cetak</button>
                             <button onclick="deleteRecord('${s.nomorRegistrasi}')" class="text-rose-600 hover:text-white hover:bg-rose-600 px-2 py-0.5 rounded border border-rose-200 text-[11px] transition">Hapus</button>
                         </td>
                     </tr>`;
