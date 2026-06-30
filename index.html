@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - MAS. AL-MAJIDIYAH NWDI MAJIDI</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .sidebar-active { background-color: #046a38; border-left: 4px solid #10b981; }
         
@@ -459,6 +459,8 @@
                         <div class="text-right">
                             <span id="kwSubTitleLabel" class="text-[9px] font-bold border px-1.5 py-0.5 rounded bg-slate-50">KWITANSI RESMI DAFTAR ULANG</span>
                             <p id="kwTanggal" class="text-[9px] font-mono mt-1">Tanggal: --</p>
+                            <!-- BERIKUT ADALAH PENAMBAHAN NOMOR KWITANSI OTOMATIS -->
+                            <p class="text-[9px] font-bold font-mono text-emerald-800 mt-0.5">No: <span id="resKwNo">-</span></p>
                         </div>
                     </div>
                     
@@ -702,6 +704,9 @@
             document.getElementById('kwTanggal').innerText = `Tanggal: ${payload.tanggalInput}`;
             document.getElementById('kwTtdTgl').innerText = payload.tanggalInput;
             
+            // SINKRONISASI ELEMEN NOMOR KWITANSI OTOMATIS
+            document.getElementById('resKwNo').innerText = payload.nomorKwitansi;
+            
             const listTbody = document.getElementById('receiptListItems');
             listTbody.innerHTML = '';
             itemPayments.forEach((p, index) => {
@@ -737,6 +742,9 @@
             document.getElementById('kwTanggal').innerText = `Tanggal: ${student.tanggalInput}`;
             document.getElementById('kwTtdTgl').innerText = student.tanggalInput;
             
+            // SINKRONISASI ELEMEN NOMOR KWITANSI SAAT CETAK ULANG
+            document.getElementById('resKwNo').innerText = student.nomorKwitansi || 'KW/2026/0000';
+
             const listTbody = document.getElementById('receiptListItems');
             listTbody.innerHTML = '';
             
