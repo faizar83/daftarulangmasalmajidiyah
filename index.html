@@ -24,6 +24,7 @@
 </head>
 <body class="bg-slate-100 antialiased text-slate-800 flex h-screen overflow-hidden">
 
+    <!-- PASSWORD GATE -->
     <div id="passwordGate" class="fixed inset-0 bg-emerald-900 flex items-center justify-center p-4 z-50">
         <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full text-center border border-emerald-600">
             <img src="https://uploads.onecompiler.io/44rv6xs4x/44rxebzu8/logo%20ma.jpg" alt="Logo" class="h-24 mx-auto mb-4 object-contain">
@@ -39,8 +40,10 @@
         </div>
     </div>
 
+    <!-- MAIN APP CONTAINER -->
     <div id="appContainer" class="hidden w-full h-full flex overflow-hidden">
         
+        <!-- SIDEBAR -->
         <aside class="w-64 bg-[#024424] text-slate-200 flex flex-col flex-shrink-0 h-full no-print">
             <div class="p-4 bg-white flex items-center space-x-3 border-b border-slate-100">
                 <img src="https://uploads.onecompiler.io/44rv6xs4x/44rxebzu8/logo%20ma.jpg" class="h-11 w-auto" alt="Logo">
@@ -93,6 +96,7 @@
             </div>
         </aside>
 
+        <!-- MAIN WORKSPACE -->
         <div class="flex-1 flex flex-col h-full overflow-hidden">
             
             <header class="bg-white border-b border-slate-200 h-14 flex items-center justify-between px-6 flex-shrink-0 no-print">
@@ -120,6 +124,7 @@
 
             <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
+                <!-- DASHBOARD PAGE -->
                 <section id="page-dashboard" class="space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                         <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
@@ -217,6 +222,7 @@
                     </div>
                 </section>
 
+                <!-- DATABASE SANTRI PAGE -->
                 <section id="page-datasiswa" class="hidden bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                         <div>
@@ -248,6 +254,7 @@
                     </div>
                 </section>
 
+                <!-- FORM DAFTAR ULANG PAGE -->
                 <section id="page-daftarulang" class="hidden">
                     <form id="regForm" onsubmit="handleSubmitForm(event)" class="space-y-6">
                         <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
@@ -265,7 +272,7 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Kelas </label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Kelas *</label>
                                     <select id="studentClass" required onchange="handleClassChange()" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-800 focus:border-emerald-500 focus:outline-none">
                                         <option value="">-- Pilih Kelas --</option>
                                         <option value="X">Kelas X</option>
@@ -274,7 +281,7 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Jurusan </label>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Pilihan Jurusan *</label>
                                     <select id="studentMajor" required class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-800 focus:border-emerald-500 focus:outline-none">
                                         <option value="">-- Pilih Jurusan --</option>
                                         <option value="Reguler">Reguler</option>
@@ -372,9 +379,9 @@
                                 <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="SKL" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">SKL</span></label>
                                 <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Pas Photo" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Pas Photo</span></label>
                                 <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Kartu Keluarga</span></label>
-                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">KTP Bapak dan Ibu</span></label>
-                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Akte Kelahiran</span></label>
-                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Kartu Keluarga" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Kartu Bantuan Sosial (KIP, KKS dan PKH)</span></label>
+                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="KTP Orang Tua" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">KTP Bapak dan Ibu</span></label>
+                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Akte Kelahiran" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Akte Kelahiran</span></label>
+                                <label class="flex items-center p-2.5 border rounded-lg cursor-pointer bg-slate-50 text-xs"><input type="checkbox" name="documents" value="Bansos" class="w-4 h-4 text-emerald-600 rounded"><span class="ml-2">Kartu Bantuan Sosial (KIP, KKS dan PKH)</span></label>
                             </div>
                         </div>
 
@@ -409,6 +416,7 @@
                     </form>
                 </section>
 
+                <!-- LOG TRANSAKSI PAGE -->
                 <section id="page-pembayaran" class="hidden bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
                     <div>
                         <h3 class="text-base font-bold text-slate-800">Log Transaksi Kuitansi Pembayaran</h3>
@@ -433,6 +441,7 @@
 
             </div>
 
+            <!-- FOOTER CONTAINER -->
             <footer class="bg-white border-t border-slate-200 h-14 px-6 flex items-center justify-between text-xs text-slate-500 flex-shrink-0 no-print">
                 <div class="flex items-center space-x-1 text-emerald-700 font-medium"><i class="fas fa-calendar-check mr-1"></i> Tahun Pelajaran Aktif: <span class="font-bold border bg-emerald-50 border-emerald-200 px-2 py-0.5 rounded ml-1">2026/2027</span></div>
                 <div class="flex items-center space-x-1"><i class="fas fa-user-tie text-slate-400"></i> <span>Petugas Bendahara:</span> <span class="font-bold text-slate-700">Abdushomad Jaelani Syarif, S.Pd.</span></div>
@@ -441,6 +450,7 @@
         </div>
     </div>
 
+    <!-- MODAL KWITANSI / PRINT PREVIEW -->
     <div id="receiptModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden flex flex-col max-h-[90vh]">
             <div class="bg-slate-800 text-white p-4 flex justify-between items-center no-print">
@@ -465,7 +475,6 @@
                         <div class="text-right">
                             <span id="kwSubTitleLabel" class="text-[9px] font-bold border px-1.5 py-0.5 rounded bg-slate-50">KWITANSI RESMI DAFTAR ULANG</span>
                             <p id="kwTanggal" class="text-[9px] font-mono mt-1">Tanggal: --</p>
-                            <!-- BERIKUT ADALAH PENAMBAHAN NOMOR KWITANSI OTOMATIS -->
                             <p class="text-[9px] font-bold font-mono text-emerald-800 mt-0.5">No: <span id="resKwNo">-</span></p>
                         </div>
                     </div>
@@ -495,7 +504,7 @@
                         <tfoot class="font-bold bg-slate-50 text-right">
                             <tr><td colspan="3" class="p-1 border">TOTAL SEHARUSNYA:</td><td id="rcTotalBaku" class="p-1 border font-mono">Rp 0</td><td class="border"></td></tr>
                             <tr class="text-emerald-800"><td colspan="3" class="p-1 border">TOTAL DISETOR:</td><td id="rcTotalBayar" class="p-1 border font-mono">Rp 0</td><td class="border"></td></tr>
-                            <tr class="text-rose-700"><td colspan="4" class="p-1 border">SISA TUNGGAKAN:</td><td id="rcTotalSisa" class="p-1 border font-mono">Rp 0</td></tr>
+                            <tr><td colspan="4" class="p-1 border text-rose-700">SISA TUNGGAKAN:</td><td id="rcTotalSisa" class="p-1 border font-mono text-rose-700">Rp 0</td></tr>
                         </tfoot>
                     </table>
                     
@@ -518,6 +527,94 @@
     
     <div id="printDoubleContainer" class="hidden"></div>
 
+    <!-- MODAL EDIT DATA SISWA (AMBER EDITION WITH PAYMENT DETAIL) -->
+    <div id="editModal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center z-50 hidden no-print">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl overflow-hidden flex flex-col my-8 max-h-[90vh]">
+            <div class="bg-gradient-to-r from-amber-600 to-amber-700 px-4 py-3 text-white flex justify-between items-center shrink-0">
+                <div>
+                    <h3 class="font-bold text-sm flex items-center gap-2"><i class="fas fa-edit"></i> Perbarui Data & Pembayaran Santri</h3>
+                    <p class="text-[10px] text-amber-100/80">Modifikasi berkas profil administrasi lokal</p>
+                </div>
+                <button onclick="closeEditModal()" class="text-white/80 hover:text-white text-base"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <form id="editForm" onsubmit="handleUpdateForm(event)" class="p-4 space-y-3 overflow-y-auto flex-1">
+                <input type="hidden" id="editRegNo">
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Nama Lengkap Santri</label>
+                        <input type="text" id="editStudentName" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs uppercase focus:outline-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Nomor NISN (10 Digit)</label>
+                        <input type="number" id="editNisn" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-emerald-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Status Akademik</label>
+                        <select id="editStudentStatus" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-emerald-500">
+                            <option value="Santri Baru">Santri Baru</option>
+                            <option value="Santri Lama">Santri Lama</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Tingkat Kelas</label>
+                        <select id="editStudentClass" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-emerald-500">
+                            <option value="X">Kelas X</option>
+                            <option value="XI">Kelas XI</option>
+                            <option value="XII">Kelas XII</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Jurusan / Fase</label>
+                        <select id="editStudentMajor" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-emerald-500">
+                            <option value="Fase E (Umum)">Fase E (Umum)</option>
+                            <option value="Reguler">Reguler</option>
+                            <option value="Agama">Agama</option>
+                            <option value="IPA">IPA</option>
+                            <option value="Bahasa">Bahasa</option>
+                            <option value="IPS">IPS</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Sistem Domisili</label>
+                        <select id="editDormitoryStatus" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-emerald-500">
+                            <option value="Asrama">Asrama</option>
+                            <option value="Non Asrama">Non Asrama</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="border-t pt-2">
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1">
+                        <i class="fas fa-wallet text-amber-600"></i> Edit Nominal Pembayaran Kuitansi:
+                    </label>
+                    <div class="border rounded-lg overflow-hidden max-h-60 overflow-y-auto">
+                        <table class="w-full text-xs text-left">
+                            <thead class="bg-slate-50 border-b text-slate-600 sticky top-0">
+                                <tr>
+                                    <th class="p-2">Komponen Biaya</th>
+                                    <th class="p-2 text-right">Baku</th>
+                                    <th class="p-2 text-center w-36">Bayar (Rp)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="editPaymentTableBody" class="divide-y divide-slate-100"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="flex justify-end space-x-2 pt-3 border-t shrink-0">
+                    <button type="button" onclick="closeEditModal()" class="bg-slate-200 text-slate-700 text-xs font-medium px-4 py-2 rounded-lg hover:bg-slate-300">Batal</button>
+                    <button type="submit" class="bg-amber-600 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-amber-700">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN ENGINE SCRIPT JS -->
     <script>
         const OBFUSCATED_PASS = btoa("adminmadrasah123"); 
         let chartInstancePay = null;
@@ -555,7 +652,7 @@
                 document.getElementById('gatePassword').value = '';
             }
         }
-        
+
         function systemLogout() {
             if(confirm("Apakah anda yakin ingin mengunci kembali sistem dashboard?")) {
                 document.getElementById('gatePassword').value = '';
@@ -709,22 +806,38 @@
             document.getElementById('resClassMajor').innerText = `: Kelas ${payload.kelas} - ${payload.jurusan}`;
             document.getElementById('kwTanggal').innerText = `Tanggal: ${payload.tanggalInput}`;
             document.getElementById('kwTtdTgl').innerText = payload.tanggalInput;
-            
-            // SINKRONISASI ELEMEN NOMOR KWITANSI OTOMATIS
             document.getElementById('resKwNo').innerText = payload.nomorKwitansi;
             
             const listTbody = document.getElementById('receiptListItems');
             listTbody.innerHTML = '';
+            
             itemPayments.forEach((p, index) => {
                 if(p.bayar > 0) {
-                    const row = `<tr><td class="border text-center">${index+1}</td><td class="border">${p.item}</td><td class="border text-right">${formatRupiah(p.baku)}</td><td class="border text-right font-bold">${formatRupiah(p.bayar)}</td><td class="border text-right text-rose-600">${formatRupiah(p.sisa)}</td></tr>`;
+                    const sisaTeks = p.sisa < 0 ? `Lebih: ${formatRupiah(Math.abs(p.sisa))}` : formatRupiah(p.sisa);
+                    const sisaWarna = p.sisa < 0 ? 'text-emerald-600 font-bold' : (p.sisa > 0 ? 'text-rose-600' : 'text-slate-500');
+
+                    const row = `<tr>
+                        <td class="border text-center">${index+1}</td>
+                        <td class="border">${p.item}</td>
+                        <td class="border text-right">${formatRupiah(p.baku)}</td>
+                        <td class="border text-right font-bold">${formatRupiah(p.bayar)}</td>
+                        <td class="border text-right ${sisaWarna}">${sisaTeks}</td>
+                    </tr>`;
                     listTbody.innerHTML += row;
                 }
             });
 
+            const totalSisaMurni = totalBaku - totalBayar;
+            const labelSisa = document.getElementById('rcTotalSisa').parentElement;
+
+            if (totalSisaMurni < 0) {
+                labelSisa.innerHTML = `<td colspan="4" class="p-1 border text-emerald-700 font-bold">KELEBIHAN PEMBAYARAN:</td><td id="rcTotalSisa" class="p-1 border font-mono text-emerald-700 font-bold">${formatRupiah(Math.abs(totalSisaMurni))}</td>`;
+            } else {
+                labelSisa.innerHTML = `<td colspan="4" class="p-1 border text-rose-700">SISA TUNGGAKAN:</td><td id="rcTotalSisa" class="p-1 border font-mono text-rose-700">${formatRupiah(totalSisaMurni)}</td>`;
+            }
+
             document.getElementById('rcTotalBaku').innerText = formatRupiah(totalBaku);
             document.getElementById('rcTotalBayar').innerText = formatRupiah(totalBayar);
-            document.getElementById('rcTotalSisa').innerText = formatRupiah(totalBaku - totalBayar);
             document.getElementById('kwTerbilang').innerText = hitungTerbilang(totalBayar) + " Rupiah";
 
             document.getElementById('receiptModal').classList.remove('hidden');
@@ -747,8 +860,6 @@
             document.getElementById('resClassMajor').innerText = `: Kelas ${student.kelas} - ${student.jurusan}`;
             document.getElementById('kwTanggal').innerText = `Tanggal: ${student.tanggalInput}`;
             document.getElementById('kwTtdTgl').innerText = student.tanggalInput;
-            
-            // SINKRONISASI ELEMEN NOMOR KWITANSI SAAT CETAK ULANG
             document.getElementById('resKwNo').innerText = student.nomorKwitansi || 'KW/2026/0000';
 
             const listTbody = document.getElementById('receiptListItems');
@@ -757,18 +868,37 @@
             if(student.itemPayments && student.itemPayments.length > 0) {
                 student.itemPayments.forEach((p, index) => {
                     if(p.bayar > 0) {
-                        const row = `<tr><td class="border text-center">${index+1}</td><td class="border">${p.item}</td><td class="border text-right">${formatRupiah(p.baku)}</td><td class="border text-right font-bold">${formatRupiah(p.bayar)}</td><td class="border text-right text-rose-600">${formatRupiah(p.sisa)}</td></tr>`;
+                        const sisaTeks = p.sisa < 0 ? `Lebih: ${formatRupiah(Math.abs(p.sisa))}` : formatRupiah(p.sisa);
+                        const sisaWarna = p.sisa < 0 ? 'text-emerald-600 font-bold' : (p.sisa > 0 ? 'text-rose-600' : 'text-slate-500');
+
+                        const row = `<tr>
+                            <td class="border text-center">${index+1}</td>
+                            <td class="border">${p.item}</td>
+                            <td class="border text-right">${formatRupiah(p.baku)}</td>
+                            <td class="border text-right font-bold">${formatRupiah(p.bayar)}</td>
+                            <td class="border text-right ${sisaWarna}">${sisaTeks}</td>
+                        </tr>`;
                         listTbody.innerHTML += row;
                     }
                 });
             } else {
-                const row = `<tr><td class="border text-center">1</td><td class="border">Pembayaran Global (Log Lama)</td><td class="border text-right">${formatRupiah(student.totalBaku)}</td><td class="border text-right font-bold">${formatRupiah(student.totalBayar)}</td><td class="border text-right text-rose-600">${formatRupiah(student.totalSisa)}</td></tr>`;
+                const sisaTeksGlobal = student.totalSisa < 0 ? `Lebih: ${formatRupiah(Math.abs(student.totalSisa))}` : formatRupiah(student.totalSisa);
+                const sisaWarnaGlobal = student.totalSisa < 0 ? 'text-emerald-600 font-bold' : 'text-rose-600';
+                const row = `<tr><td class="border text-center">1</td><td class="border">Pembayaran Global (Log Lama)</td><td class="border text-right">${formatRupiah(student.totalBaku)}</td><td class="border text-right font-bold">${formatRupiah(student.totalBayar)}</td><td class="border text-right ${sisaWarnaGlobal}">${sisaTeksGlobal}</td></tr>`;
                 listTbody.innerHTML += row;
+            }
+
+            const totalSisaMurni = student.totalSisa;
+            const labelSisaReprint = document.getElementById('rcTotalSisa').parentElement;
+
+            if (totalSisaMurni < 0) {
+                labelSisaReprint.innerHTML = `<td colspan="4" class="p-1 border text-emerald-700 font-bold">KELEBIHAN PEMBAYARAN:</td><td id="rcTotalSisa" class="p-1 border font-mono text-emerald-700 font-bold">${formatRupiah(Math.abs(totalSisaMurni))}</td>`;
+            } else {
+                labelSisaReprint.innerHTML = `<td colspan="4" class="p-1 border text-rose-700">SISA TUNGGAKAN:</td><td id="rcTotalSisa" class="p-1 border font-mono text-rose-700">${formatRupiah(totalSisaMurni)}</td>`;
             }
 
             document.getElementById('rcTotalBaku').innerText = formatRupiah(student.totalBaku);
             document.getElementById('rcTotalBayar').innerText = formatRupiah(student.totalBayar);
-            document.getElementById('rcTotalSisa').innerText = formatRupiah(student.totalSisa);
             document.getElementById('kwTerbilang').innerText = hitungTerbilang(student.totalBayar) + " Rupiah";
 
             document.getElementById('receiptModal').classList.remove('hidden');
@@ -830,18 +960,19 @@
             if (chartInstanceMajor) chartInstanceMajor.destroy();
             const ctxMajor = document.getElementById('chartJurusan').getContext('2d');
             
-            const counts = { agama: 0, ipa: 0, ips: 0, bahasa: 0 };
+            const counts = { agama: 0, ipa: 0, ips: 0, bahasa: 0, faseE: 0 };
             db.forEach(s => {
                 if(s.jurusan === 'Agama') counts.agama++;
                 else if(s.jurusan === 'IPA') counts.ipa++;
                 else if(s.jurusan === 'IPS') counts.ips++;
                 else if(s.jurusan === 'Bahasa') counts.bahasa++;
+                else if(s.jurusan?.includes('Fase E')) counts.faseE++;
             });
 
             const isDbEmpty = db.length === 0;
-            const chartData = isDbEmpty ? [1] : [counts.agama, counts.ipa, counts.ips, counts.bahasa];
-            const chartLabels = isDbEmpty ? ['Belum Ada Data'] : ['Agama', 'IPA', 'IPS', 'Bahasa'];
-            const chartColors = isDbEmpty ? ['#cbd5e1'] : ['#046a38', '#2563eb', '#ea580c', '#8b5cf6'];
+            const chartData = isDbEmpty ? [1] : [counts.agama, counts.ipa, counts.ips, counts.bahasa, counts.faseE];
+            const chartLabels = isDbEmpty ? ['Belum Ada Data'] : ['Agama', 'IPA', 'IPS', 'Bahasa', 'Fase E'];
+            const chartColors = isDbEmpty ? ['#cbd5e1'] : ['#046a38', '#2563eb', '#ea580c', '#8b5cf6', '#14b8a6'];
 
             chartInstanceMajor = new Chart(ctxMajor, {
                 type: 'doughnut',
@@ -872,10 +1003,13 @@
                         <td class="p-3 text-slate-600">${s.statusAcademic} / Kelas ${s.kelas || '-'} (${s.jurusan || '-'})</td>
                         <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${s.domisili === 'Asrama' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-700'}">${s.domisili}</span></td>
                         <td class="p-3 text-right font-mono font-medium">${formatRupiah(s.totalBayar)}</td>
-                        <td class="p-3 text-right font-mono ${s.totalSisa > 0 ? 'text-rose-600 font-bold' : 'text-emerald-600'}">${formatRupiah(s.totalSisa)}</td>
-                        <td class="p-3 text-center space-x-1 flex items-center justify-center">
+                        <td class="p-3 text-right font-mono ${s.totalSisa > 0 ? 'text-rose-600 font-bold' : 'text-emerald-600'}">
+                            ${s.totalSisa < 0 ? `+ ${formatRupiah(Math.abs(s.totalSisa))}` : formatRupiah(s.totalSisa)}
+                        </td>
+                        <td class="p-3 text-center space-x-1 flex items-center justify-center gap-1">
                             <button onclick="reprintReceipt('${s.nomorRegistrasi}')" class="text-emerald-700 hover:text-white hover:bg-emerald-700 px-2 py-0.5 rounded border border-emerald-200 text-[11px] transition flex items-center gap-1"><i class="fas fa-print"></i> Cetak</button>
-                            <button onclick="deleteRecord('${s.nomorRegistrasi}')" class="text-rose-600 hover:text-white hover:bg-rose-600 px-2 py-0.5 rounded border border-rose-200 text-[11px] transition">Hapus</button>
+                            <button onclick="openEditModal('${s.nomorRegistrasi}')" class="text-amber-600 hover:text-white hover:bg-amber-500 px-2 py-0.5 rounded border border-amber-200 text-[11px] transition flex items-center gap-1"><i class="fas fa-edit"></i> Edit</button>
+                            <button onclick="deleteRecord('${s.nomorRegistrasi}')" class="text-rose-600 hover:text-white hover:bg-rose-600 px-2 py-0.5 rounded border border-rose-200 text-[11px] transition flex items-center gap-1"><i class="fas fa-trash"></i> Hapus</button>
                         </td>
                     </tr>`;
             });
@@ -995,6 +1129,119 @@
                 doubleContainer.classList.add('hidden');
                 doubleContainer.innerHTML = '';
             });
+        }
+
+        function openEditModal(regNo) {
+            const db = JSON.parse(localStorage.getItem("database_santri")) || [];
+            const student = db.find(s => s.nomorRegistrasi === regNo);
+            
+            if (!student) {
+                alert("Data siswa tidak ditemukan.");
+                return;
+            }
+
+            document.getElementById('editRegNo').value = student.nomorRegistrasi;
+            document.getElementById('editStudentName').value = student.nama;
+            document.getElementById('editNisn').value = student.nisn;
+            document.getElementById('editStudentStatus').value = student.statusAcademic;
+            document.getElementById('editStudentClass').value = student.kelas;
+            document.getElementById('editStudentMajor').value = student.jurusan;
+            document.getElementById('editDormitoryStatus').value = student.domisili;
+
+            const editTbody = document.getElementById('editPaymentTableBody');
+            editTbody.innerHTML = '';
+
+            const items = student.itemPayments && student.itemPayments.length > 0 
+                ? student.itemPayments 
+                : Object.entries(student.totalBaku === 3525000 ? hargaBakuCewek : hargaBakuCowok).map(([item, price]) => ({
+                    item, baku: price, bayar: 0, sisa: price
+                  }));
+
+            items.forEach(p => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50';
+                tr.innerHTML = `
+                    <td class="p-2 font-medium text-slate-700">${p.item}</td>
+                    <td class="p-2 text-right font-mono text-slate-400">${formatRupiah(p.baku)}</td>
+                    <td class="p-2 text-right">
+                        <input type="number" 
+                            data-edit-component="${p.item}" 
+                            data-edit-baku="${p.baku}" 
+                            value="${p.bayar}" 
+                            class="w-full border rounded p-1 text-right font-mono focus:outline-amber-500 text-xs">
+                    </td>
+                `;
+                editTbody.appendChild(tr);
+            });
+
+            document.getElementById('editModal').classList.remove('hidden');
+        }
+
+        function handleUpdateForm(event) {
+            event.preventDefault();
+            
+            const regNo = document.getElementById('editRegNo').value;
+            const nisnValue = document.getElementById('editNisn').value.trim();
+
+            if (nisnValue.length !== 10) {
+                alert("NISN harus berisikan 10 digit angka.");
+                return;
+            }
+
+            let db = JSON.parse(localStorage.getItem("database_santri")) || [];
+            const index = db.findIndex(s => s.nomorRegistrasi === regNo);
+
+            if (index === -1) {
+                alert("Gagal memperbarui, data tidak ditemukan.");
+                return;
+            }
+
+            if (db.some((s, idx) => s.nisn === nisnValue && idx !== index)) {
+                alert("NISN tersebut sudah digunakan oleh santri/siswa lain.");
+                return;
+            }
+
+            db[index].nama = document.getElementById('editStudentName').value.toUpperCase();
+            db[index].nisn = nisnValue;
+            db[index].statusAcademic = document.getElementById('editStudentStatus').value;
+            db[index].kelas = document.getElementById('editStudentClass').value;
+            db[index].jurusan = document.getElementById('editStudentMajor').value;
+            db[index].domisili = document.getElementById('editDormitoryStatus').value;
+
+            let totalBaku = 0;
+            let totalBayar = 0;
+            const updatedItemPayments = [];
+
+            document.querySelectorAll('#editPaymentTableBody input[type="number"]').forEach(input => {
+                const bk = parseInt(input.getAttribute('data-edit-baku')) || 0;
+                const by = parseInt(input.value) || 0;
+                totalBaku += bk;
+                totalBayar += by;
+                
+                updatedItemPayments.push({
+                    item: input.getAttribute('data-edit-component'),
+                    baku: bk,
+                    bayar: by,
+                    sisa: bk - by
+                });
+            });
+
+            db[index].totalBaku = totalBaku;
+            db[index].totalBayar = totalBayar;
+            db[index].totalSisa = totalBaku - totalBayar;
+            db[index].itemPayments = updatedItemPayments;
+
+            localStorage.setItem("database_santri", JSON.stringify(db));
+            
+            alert("Data profil & nominal kuitansi berhasil diperbarui!");
+            closeEditModal();
+            renderDatabaseMainTable();
+            updateDashboardMetrics();
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.add('hidden');
+            document.getElementById('editForm').reset();
         }
     </script>
 </body>
