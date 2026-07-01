@@ -527,7 +527,7 @@
     
     <div id="printDoubleContainer" class="hidden"></div>
 
-    <!-- MODAL EDIT DATA SISWA (AMBER EDITION WITH PAYMENT DETAIL) -->
+    <!-- MODAL EDIT DATA SISWA -->
     <div id="editModal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center z-50 hidden no-print">
         <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl overflow-hidden flex flex-col my-8 max-h-[90vh]">
             <div class="bg-gradient-to-r from-amber-600 to-amber-700 px-4 py-3 text-white flex justify-between items-center shrink-0">
@@ -720,6 +720,47 @@
                 ];
                 opsiLanjutan.forEach(j => { majorSelect.innerHTML += `<option value="${j.value}">${j.text}</option>`; });
             }
+        }
+
+        function exportExcel() {
+            const db = JSON.parse(localStorage.getItem("database_santri")) || [];
+            
+            if (db.length === 0) {
+                alert('Database masih kosong, tidak ada data santri untuk diekspor.');
+                return;
+            }
+
+            const laporanExcel = db.map((santri, index) => {
+                return {
+                    "No": index + 1,
+                    "Tanggal Daftar": santri.tanggalInput || "-",
+                    "No. Registrasi": santri.nomorRegistrasi || "-",
+                    "No. Kuitansi": santri.nomorKwitansi || "-",
+                    "Nama Lengkap": santri.nama || "-",
+                    "NISN": santri.nisn || "-",
+                    "Status": santri.statusAcademic || "-",
+                    "Kelas": santri.kelas || "-",
+                    "Jurusan": santri.jurusan || "-",
+                    "Sistem Domisili": santri.domisili || "-",
+                    "Wali Murid": santri.wali || "-",
+                    "Ukuran Baju": santri.ukuranBaju || "-",
+                    "Total Baku (Rp)": santri.totalBaku || 0,
+                    "Total Terbayar (Rp)": santri.totalBayar || 0,
+                    "Sisa Tunggakan (Rp)": santri.totalSisa || 0,
+                    "Status Pembayaran": (santri.totalSisa <= 0) ? "LUNAS" : "BELUM LUNAS"
+                };
+            });
+
+            const worksheet = XLSX.utils.json_to_sheet(laporanExcel);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Data Daftar Ulang");
+
+            const maxKeys = Object.keys(laporanExcel[0]);
+            worksheet["!cols"] = maxKeys.map(key => ({
+                wch: Math.max(...laporanExcel.map(row => row[key] ? row[key].toString().length : 0).concat(key.length)) + 3
+            }));
+
+            XLSX.writeFile(workbook, `Laporan_DaftarUlang_MAS_AlMajidiyah_${new Date().getFullYear()}.xlsx`);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1057,15 +1098,6 @@
             });
         }
 
-        function exportExcel() {
-            const db = JSON.parse(localStorage.getItem("database_santri")) || [];
-            if(db.length === 0) return alert('Database masih kosong.');
-            const ws = XLSX.utils.json_to_sheet(db);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, "Database Santri");
-            XLSX.writeFile(wb, "Data_DaftarUlang_MAS_AlMajidiyah.xlsx");
-        }
-
         function backupData() {
             const raw = localStorage.getItem("database_santri") || "[]";
             const blob = new Blob([raw], {type: 'application/json'});
@@ -1112,23 +1144,46 @@
             }, 1000);
         }
 
-        function exportToPDF() {
-            generateDoubleReceipt();
-            const doubleContainer = document.getElementById('printDoubleContainer');
-            doubleContainer.classList.remove('hidden');
+        async function exportToPDF() {
+            const btnPdf = document.querySelector("button[onclick='exportToPDF()']");
+            const originalText = btnPdf.innerHTML;
+            btnPdf.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memproses PDF...`;
+            btnPdf.disabled = true;
 
-            const options = {
-                margin:       10,
-                filename:     `Kwitansi_Rangkap_${currentStudentCleanName}.pdf`,
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            html2pdf().set(options).from(doubleContainer).save().then(() => {
+            try {
+                generateDoubleReceipt();
+                const doubleContainer = document.getElementById('printDoubleContainer');
+                
+                doubleContainer.classList.remove('hidden');
+                doubleContainer.style.display = 'block';
+
+                const options = {
+                    margin:       [10, 10, 10, 10],
+                    filename:     `Kwitansi_Rangkap_${currentStudentCleanName || 'Santri'}.pdf`,
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { 
+                        scale: 2, 
+                        useCORS: true, 
+                        logging: false,
+                        letterRendering: true
+                    },
+                    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                
+                await html2pdf().set(options).from(doubleContainer).save();
+
+            } catch (error) {
+                console.error("Gagal mengekspor PDF:", error);
+                alert("Terjadi kesalahan saat menyimpan PDF.");
+            } finally {
+                const doubleContainer = document.getElementById('printDoubleContainer');
                 doubleContainer.classList.add('hidden');
+                doubleContainer.style.display = 'none';
                 doubleContainer.innerHTML = '';
-            });
+                
+                btnPdf.innerHTML = originalText;
+                btnPdf.disabled = false;
+            }
         }
 
         function openEditModal(regNo) {
